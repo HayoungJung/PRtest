@@ -1,4 +1,18 @@
 //PR Test
+function CWE_398() { // IDENTICAL_BRANCHES
+    if (x >= 0) {
+        y = x;
+    } else {
+        y = x;
+    }
+}
+function CWE_476() { // NULL_POINTER
+    var obj;
+    var y = obj.x;  // UNINITIALIZED_LOCAL_VAR
+    console.log(y);
+}
+//test
+
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
